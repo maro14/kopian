@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
     name: String,
-    email: String,
-    password: Sring
+    price: Number,
+    description: String
 })
 
 const User = mongoose.model('user', productSchema)
