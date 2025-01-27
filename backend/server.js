@@ -1,14 +1,21 @@
 const express = require('express');
+const cors = require('cors');
+const connectDB = require('./database');
 
-const app = express()
+const app = express();
 
-app.use(express.json())
+// Database connection
+connectDB();
 
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Routes
 const productRouter = require('./routes/product');
-app.use('/product', productRouter)
+app.use('/products', productRouter);
 
-const PORT = 5000
-
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`server on ${PORT}`);
-})
+    console.log(`Server running on port ${PORT}`);
+});
