@@ -4,8 +4,7 @@ const productSchema = new mongoose.Schema({
     name: String,
     price: Number,
     description: String
-})
+});
 
-const User = mongoose.model('user', productSchema)
-
-module.exports = User
+const Product = mongoose.model('Product', productSchema); // Corrected model name
+module.exports = Product;
