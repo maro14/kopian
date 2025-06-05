@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./database');
+const { } = require('./config');
 const morgan = require('morgan'); // Single import
 
 const app = express();
